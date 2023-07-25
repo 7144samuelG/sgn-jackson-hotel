@@ -1,0 +1,13 @@
+<svg id="usp-tick-26px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="25.392" viewBox="0 0 26 25.392">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_2" data-name="Path 2" d="M0,0H26V25.392H0Z"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1" data-name="Group 1" clip-path="url(#clip-path)">
+    <path id="Path_1" data-name="Path 1" d="M312.569,872.13a9.565,9.565,0,1,1,0-19.13,1.656,1.656,0,0,1,0,3.311,6.252,6.252,0,1,0,6.262,6.256,1.656,1.656,0,0,1,3.311,0,9.575,9.575,0,0,1-9.573,9.562" transform="translate(-301.29 -848.196)" fill="#50504e"/>
+  </g>
+  <g id="Group_2" data-name="Group 2" clip-path="url(#clip-path)">
+    <path id="Path_3" data-name="Path 3" d="M1283,285.951s2.016-1.9,3.2-.118l1.543,3.2A37.438,37.438,0,0,1,1299.956,276l.355.591s-8.892,7.107-11.5,14.923l-1.9,1.306s-1.425-6.279-3.914-6.87" transform="translate(-1275.775 -274.446)" fill="#98ca3c"/>
+  </g>
+</svg>

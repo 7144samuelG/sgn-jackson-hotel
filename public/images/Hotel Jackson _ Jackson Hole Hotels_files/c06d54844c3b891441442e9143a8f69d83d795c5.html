@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!-- saved from url=(0136)https://media.videopolis.com/1.0/api/getById/eng/c06d54844c3b891441442e9143a8f69d83d795c5.html?key=1a917ba295a7fb07&view=hero&phone=hero -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Template name : default.hero -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TVS Hero player - Hotel Jackson</title>
+   	<link rel="icon" href="https://player.videopolis.com/jwp/asset/favicon.png">
+    <script async="" src="./analytics.js.download"></script><script type="text/javascript" async="" src="./js(3)"></script><script src="./mobile-detect-1.3.5.min.js.download"></script>
+	<script>
+    function _getQueryParam(key) {
+		var url = window.location.href;
+		if (url.indexOf(key + '=') != -1) {
+			if (/#.+$/.test(url)) {
+				url = url.substring(0, url.indexOf('#'));
+			}
+			var valueStartIndex = url.indexOf(key + '=') + key.length + '='.length;
+			var valueEndIndex = url.indexOf('&', valueStartIndex) != -1 ? url.indexOf('&', valueStartIndex) : url.length;
+			return decodeURIComponent(url.substring(valueStartIndex, valueEndIndex));
+		} else {
+			return null;
+		}
+	};
+
+    var md = new MobileDetect(window.navigator.userAgent);
+
+	if (md.phone() && _getQueryParam('phone') === 'fallback') {
+
+		var newHref = window.location.href;
+		var anchor;
+        // save anchor
+		if (/#.+$/.test(newHref)) {
+			anchor = newHref.substring(newHref.indexOf('#'), newHref.length);
+			newHref = newHref.substring(0, newHref.indexOf('#'));
+		}
+        // remove template query param
+		if (/&template=/.test(newHref)) {
+			if (/&template=.+&/.test(newHref)) {
+				newHref = newHref.replace(/&template=.+&/, '&');
+			} else {
+				newHref = newHref.replace(/&template=.+$/, '');
+			}
+		}
+        // remove view query param
+		if (/&view=/.test(newHref)) {
+			if (/&view=.+&/.test(newHref)) {
+				newHref = newHref.replace(/&view=.+&/, '&');
+			} else {
+				newHref = newHref.replace(/&view=.+$/, '');
+			}
+		}
+		if (!/&account=|&a=/.test(newHref)) {
+			newHref += "&account=www.hoteljackson.com";
+		}
+		if (!/&referrer=/.test(newHref)) {
+			newHref += "&referrer=" + encodeURIComponent(document.referrer);
+		}
+        // re-add the saved anchor
+		if (undefined != anchor) {
+			newHref += anchor;
+		}
+		window.location.href = newHref;
+	}
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes#Polyfill
+	String.prototype.includes||(String.prototype.includes=function(t,e){"use strict"; return void 0===e&&(e=0),-1!==this.indexOf(t,e)});
+/*----------------------------------------
+ * objectFitPolyfill 2.0, Basic
+ * https://github.com/constancecchen/object-fit-polyfill
+ *--------------------------------------*/
+!function(a,b){"function"==typeof define&&define.amd?define(b):"object"==typeof exports?module.exports=b():a.objectFitPolyfill=b()}(this,function(){"use strict";if("objectFit"in document.documentElement.style==!1||"objectPosition"in document.documentElement.style==!1){var a=function(a){var b=window.getComputedStyle(a,null),c={"max-width":"none","max-height":"none","min-width":"0px","min-height":"0px"};for(var d in c){var e=b.getPropertyValue(d);e!==c[d]&&(a.style[d]=c[d])}},b=function(a,b){return a.clientWidth<1280||a.clientHeight<720},c=function(c){var d=c.parentNode;b(d,c)&&(a(c),c.style.position="absolute",c.style.height="100%",c.style.width="auto",c.clientWidth<d.clientWidth&&(c.style.width="100%",c.style.height="auto"))},d=function(){var a=document.querySelector("video");a.readyState>0?c(a):a.addEventListener("loadedmetadata",function(){c(this)})};document.addEventListener("DOMContentLoaded",function(){d()}),window.addEventListener("resize",function(){d()})}});
+   	</script>
+
+<!--[if lte IE 9]>
+	<script src="https://player.videopolis.com/jwp/js/html5shiv.min.js"></script>
+<![endif]-->
+
+    <script type="application/ld+json">
+        {
+            "@type": "VideoObject",
+            "@context": "https://schema.org",
+            "name": "Summer  Hero2023",
+            "description ": "Summer  Hero2023",
+            "thumbnailUrl ": ["https://file.videopolis.com/F/1/3b6cc085-333f-4b02-b25e-6812a66287e3/100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-1280x720.jpeg"],
+            "contentUrl ": "https://file.videopolis.com/F/1/3b6cc085-333f-4b02-b25e-6812a66287e3/100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-720p-lb.mp4",
+            "duration": "P0S",
+            "uploadDate": "2023-06-01T00:00"
+        }
+    </script>
+
+    <style>
+html {
+    width:100%;
+    height:100%;
+}
+body {
+    background-color: transparent;
+    margin:0 0 0 0;
+    padding:0 0 0 0;
+    overflow:hidden;
+    width:100%;
+    height:100%;
+}
+video, .poster {
+  position: absolute;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+@media (max-width: 1280px), (max-height: 720px) {
+    video, .poster {
+        -o-object-fit: cover;
+  		object-fit: cover;  
+        -o-object-position: 50% 100%;
+        object-position: 50% 100%;
+        width: 100%;
+    }
+}
+#mobilePoster {
+    display: none;
+}
+#video {
+    display: none;
+}
+    </style>
+
+<script>
+    var TVS_TRACKER_ID = 'UA-42706849-1';
+    var TVS_GTAG_ID_QA = 'G-06G8G2SBZR';
+    var TVS_GTAG_ID = 'G-8Y1TZ7Y895';
+</script>
+
+
+
+<!-- Google tag (gtag.js), will replace the analytics.js, Id set in videojs.go --> 
+<script async="" src="./js(4)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', TVS_GTAG_ID);
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+</script>
+
+
+</head>
+<body>
+    <video id="video" poster="https://file.videopolis.com/F/1/3b6cc085-333f-4b02-b25e-6812a66287e3/100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-1280x720.jpeg" webkit-playsinline="" playsinline="" muted="" loop="" onloadstart="sendLoad();" oncanplaythrough="sendPlayerReady();" onplay="sendPlay();" onerror="onPlayerError({ message: &#39;video&#39;, code: &#39;-&#39; });" style="display: block;">
+        <source id="sourceMp4" src="https://file.videopolis.com/F/1/3b6cc085-333f-4b02-b25e-6812a66287e3/100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-720p-lb.mp4" type="video/mp4; codecs=&quot;avc1.64001E, mp4a.40.2&quot;" onerror="onPlayerError({ message: &#39;source&#39;, code: &#39;-&#39;});">
+        
+        <img id="fallbackPoster" class="poster" src="./100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-1280x720.jpeg">
+    </video>
+    <img id="mobilePoster" class="poster" src="./100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-1280x720.jpeg">
+
+
+<script>
+    // tracking info
+    var account_id = '947';
+    var product_name = "Hotel Jackson";
+    var template_name = "default.hero";
+    var media_id = "c06d54844c3b891441442e9143a8f69d83d795c5";
+    var media_name = "Summer  Hero2023";
+    var partner_id = "131413";
+    var object_id = "12588";
+    var hotel_id = undefined;
+    var project_id = "100827";
+    var category = "hero";
+    var ihotelier_id = "131413";
+    var bid_number = "611959";
+    var media_duration = 0;
+
+    var MEDIA_PLATFORM_AKAMAI_CHINA_HOSTNAME = 'media.travelclickchina.cn';
+    var FILE_PLATFORM_CEDEXIS_HOSTNAME = 'file.videopolis.com';
+    var FILE_PLATFORM_AKAMAI_CHINA_HOSTNAME = 'file.travelclickchina.cn';
+    var PAGE_VIEW_PREFIX_GA4 = 'https://media.videopolis.com';
+
+    var EVENT_SOURCE = "tvs.video.api";
+    var PLAYER_TEMPLATE = "hero";
+
+    var EVENTS = {
+        READY: 'ready',
+        PLAY: 'play',
+        PAUSE: 'pause',
+        MUTE: 'mute',
+        ERROR: 'error'
+    };
+
+    var posterPath = "https://file.videopolis.com/F/1/3b6cc085-333f-4b02-b25e-6812a66287e3/100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-1280x720.jpeg";
+    var mobilePosterPath = "https://file.videopolis.com/F/1/3b6cc085-333f-4b02-b25e-6812a66287e3/100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-1280x720.jpeg";
+    var videoPath = "https://file.videopolis.com/F/1/3b6cc085-333f-4b02-b25e-6812a66287e3/100827.12588.jackson.hotel-jackson.hero.summer--hero2023-5QoyTxS5-64843-720p-lb.mp4";
+    var captionPath = "";
+    var media_filename = videoPath.split('/').reverse()[0];
+
+    var media_resolution = undefined;
+    if (media_filename.includes('360p')) {
+        media_resolution = '360p';
+    } else if (media_filename.includes('480p')) {
+        media_resolution = '480p';
+    } else if (media_filename.includes('720p')) {
+        media_resolution = '720p';
+    } else if (media_filename.includes('1080p')) {
+        media_resolution = '1080p';
+    }
+
+    var isDebug = _getQueryParam('debug');
+    var tracking = true;
+
+    var _playedOnce = false;
+    var _readyOnce = false;
+    var _loadedOnce = false;
+    var _errorLoadingMediaCount = 0;
+
+    if (!window.console) {
+        window.console = {
+            debug: function(){},
+            log: function(){},
+            warn: function(){},
+            error: function(){}
+        }
+	} else if (!window.console.debug) {
+		window.console.debug = window.console.log;
+    }
+
+    function _cleanBody() {
+        var bodyElement = document.getElementsByTagName('body')[0];
+        while(bodyElement.firstChild) {
+            bodyElement.removeChild(bodyElement.firstChild);
+        }
+    };
+
+    function _removeVideo() {
+        document.getElementById('video').remove();
+    };
+
+    function _displayPoster() {
+        document.getElementById('mobilePoster').style.display = 'inline-block';
+    };
+
+    function _displayVideo() {
+        document.getElementById('video').style.display = 'block';
+    };
+
+    function _setPosition(elementId) {
+        var position = _getQueryParam('position');
+        if (position.match(/left|center|right|top|bottom/)) {
+            document.getElementById(elementId).style.objectPosition = position.replace('-',' ');
+        }
+    };
+
+   function _isBlank() {
+        return 'phone' === _getQueryParam('blank') && md.phone() ||
+               'tablet' === _getQueryParam('blank') && md.tablet() ||
+               'mobile' === _getQueryParam('blank') && md.mobile();
+   };
+
+   function setupCaption() {
+       if (captionPath != "") {
+           var captionEnabled = _getQueryParam('caption');
+           if (captionEnabled == "false") {
+               var trackElement = document.getElementById('captionTrack');
+               trackElement.parentNode.removeChild(trackElement);
+           }
+       }
+    };
+
+    this.mygtag = function(command) {
+        if (tracking) {
+            // Global 'gtag' variable from gtag.js
+            gtag.apply(this, arguments);
+        } else if (isDebug) {
+            console.debug('Tracking is disabled. Command: ' + Array.prototype.slice.call(arguments).toString());
+        }
+	};
+
+    //@TODO: Remove universal analytics legacy calls 
+    this.myga = function(command) {
+        if (tracking) {
+            // Global 'ga' variable from analytics.js
+            ga.apply(this, arguments);
+        } else if (isDebug) {
+            console.debug('Tracking is disabled. Command: ' + Array.prototype.slice.call(arguments).toString());
+        }
+	};
+
+    function _getEventData(){
+		return {
+			// GA4 does not have the notion of session-scoped custom dimensions, so this data will be sent as params with the events.
+			'mediaID': media_id,
+			'objectID': object_id,
+			'hotlID': hotel_id,
+			'partnerID': partner_id,
+			'iHotelierID': ihotelier_id,
+			'projectID': project_id,
+			'category': category,
+			'accountID': account_id,
+			'videoTitle': media_name,
+			'productName': product_name,
+			'template': template_name,
+			'userAgent': window.navigator.userAgent,
+            'h264': supportCodec('video/mp4; codecs="avc1.64001E, mp4a.40.2"'),
+            'protocol': getProtocol()
+		};
+	};
+
+    function setupTracking() {
+        //config for the GA4 property is done in the template header as per Google recommendations
+
+        //@TODO: Remove universal analytics legacy calls 
+        myga('create', TVS_TRACKER_ID, {
+            'cookieFlags': 'SameSite=None; Secure'
+        });
+        myga('set', 'anonymizeIp', true);
+        myga('set', 'hostname', account_id);
+        myga('set', 'title', product_name + ':' + partner_id);
+        myga('set', 'dimension1', media_id);
+        myga('set', 'dimension2', object_id);
+        myga('set', 'dimension3', hotel_id);
+        myga('set', 'dimension4', partner_id);
+        myga('set', 'dimension5', ihotelier_id);
+        myga('set', 'dimension6', project_id);
+        myga('set', 'dimension7', category);
+        myga('set', 'dimension8', account_id);
+        myga('set', 'dimension9', media_name);
+        myga('set', 'dimension10', product_name);
+        myga('set', 'dimension15', template_name);
+        myga('set', 'dimension16', window.navigator.userAgent);
+        myga('set', 'dimension17', supportCodec('video/mp4; codecs="avc1.64001E, mp4a.40.2"'));
+        myga('set', 'dimension18', getProtocol());
+    };
+
+	function _setPageView(name) {
+		mygtag('event', 'page_view', Object.assign({
+			'page_location': PAGE_VIEW_PREFIX_GA4 + '/' + name
+		}, _getEventData()));
+
+        //@TODO: Remove universal analytics legacy calls 
+        myga('set', 'page', '/' + name);
+        if (!_loadedOnce) {
+            myga('send', 'pageview', {'sessionControl': 'start'});
+        } else {
+            myga('send', 'pageview');
+        }
+	};
+
+    function sendLoad() {
+        if (!_loadedOnce) {
+            _setPageView('load');
+            _loadedOnce = true
+        }
+    };
+
+    function sendPlay() {
+        if (!_playedOnce) {
+            _setPageView('play');
+            _playedOnce = true;
+            _postMessage(EVENTS.PLAY);
+        }
+    };
+
+    function sendPlayerReady() {
+        if (!_readyOnce) {
+            _setPageView('ready');
+            _readyOnce = true;
+            _postMessage(EVENTS.READY);
+        }
+    };
+
+    function sendError(error, count) {
+		var errorMessage = error.message;
+		if (undefined !== count && 0 !== count) {
+			errorMessage = count + '/' + errorMessage;
+		}
+		_setPageView('error/' + errorMessage);
+		_postMessage(EVENTS.ERROR, {media_error_id: error.code, media_error_message: error.message});
+	};
+
+    function onPlayerError(errorObject) {
+        _errorLoadingMediaCount++;
+        if (_errorLoadingMediaCount <= 3) {
+            var videoElt = document.getElementById('video');
+            videoElt.load().then(function () {
+                videoElt.play().catch(function (error) {
+                    onPlayerError(error);
+                });
+            }).catch(function (error) {
+                onPlayerError(error);
+            });
+        }
+        sendError(errorObject, _errorLoadingMediaCount);
+    };
+
+    function supportCodec(codecType) {
+        var result = false;
+        try {
+            var videoElt = document.createElement('video');
+            result = !!videoElt.canPlayType;
+            if (result) {
+                result = videoElt.canPlayType(codecType).replace(/^no$/, '').replace(/^$/, false);
+            }
+        } catch (e) {
+            console.warn('Your browser doesn\'t support HTML video method.');
+        }
+        return result;
+    };
+
+   	function getProtocol() {
+		if (window.performance && performance.timing.nextHopProtocol) {
+			return performance.timing.nextHopProtocol;
+		} else if (window.performance && window.performance.getEntries && performance.getEntries()[0].nextHopProtocol) {
+			return performance.getEntries()[0].nextHopProtocol;
+		} else if (window.chrome && window.chrome.loadTimes && window.chrome.loadTimes().connectionInfo) {
+			return window.chrome.loadTimes().connectionInfo;
+		} else if (location.protocol) {
+			return location.protocol.replace(":", "");
+		} else {
+			return "N/A";
+		}
+	};
+
+    function updateMediaFilePlatform(url) {
+        return url.replace(FILE_PLATFORM_CEDEXIS_HOSTNAME, FILE_PLATFORM_AKAMAI_CHINA_HOSTNAME);
+    };
+
+    function _postMessage(eventName, additionalData) {
+        var event = {
+            src: EVENT_SOURCE,
+            event: eventName,
+            data: {
+                bid_number: bid_number,
+                hotel_name: product_name,
+                hotel_id: hotel_id || object_id,
+                player_template: PLAYER_TEMPLATE,
+                player_autoplay: true,
+                media_category: category,
+                media_current_time: document.getElementById('video').currentTime,
+                media_duration: media_duration,
+                media_filename: media_filename,
+                media_id: media_id,
+                media_name: media_name,
+                media_resolution: media_resolution,
+                partner_id: partner_id,
+                project_id: project_id
+            }
+        };
+
+        if (additionalData) {
+            Object.assign(event.data, additionalData);
+        }
+
+        // we don't have any information about the parent so the postMessage is not domain specific ('*' argument)
+        window.parent.postMessage(event, '*');
+    };
+
+    // DOM ready
+    window.document.addEventListener("DOMContentLoaded", function() {
+        if (_getQueryParam('china') === 'true'|| window.location.hostname === MEDIA_PLATFORM_AKAMAI_CHINA_HOSTNAME) {
+            videoPath = updateMediaFilePlatform(videoPath);
+            posterPath = updateMediaFilePlatform(posterPath);
+            mobilePosterPath = updateMediaFilePlatform(mobilePosterPath);
+            document.getElementById('sourceMp4').setAttribute('src', videoPath);
+            document.getElementById('video').setAttribute('poster', posterPath);
+            document.getElementById('mobilePoster').setAttribute('src', mobilePosterPath);
+            document.getElementById('fallbackPoster').setAttribute('src', posterPath);
+            if (captionPath !== "") {
+                captionPath = updateMediaFilePlatform(captionPath);
+                document.getElementById('captionTrack').setAttribute('src', captionPath);
+            }
+        }
+    });
+
+    // DOM and loaded assets ready
+    window.onload = function() {
+        if (_isBlank()) {
+            _cleanBody();
+            return;
+        }
+        if (md.phone() && _getQueryParam('phone') !== 'hero') {
+            _removeVideo();
+            _displayPoster();
+            _setPosition('mobilePoster');
+        } else {
+            _displayVideo();
+            var videoElt = document.getElementById('video');
+            setupTracking();
+            setupCaption();
+            videoElt.play().catch(function (error) {
+                onPlayerError(error);
+            });
+            onHashChanged();
+        }
+    };
+
+    function onHashChanged() {
+        var hash = window.location.hash;
+        if (isDebug) {
+            console.info('Ask for change: ' + hash);
+        }
+        var video = document.getElementById('video');
+        switch (hash) {
+            case '#toggle':
+                if(video.paused) {
+                    video.play();
+                    _postMessage(EVENTS.PLAY);
+                } else {
+                    video.pause();
+                    _postMessage(EVENTS.PAUSE);
+                }
+                break;
+            case '#play':
+                video.play();
+                _postMessage(EVENTS.PLAY);
+                break;
+            case '#pause':
+                video.pause();
+                _postMessage(EVENTS.PAUSE);
+                break;
+            case '#stop':
+                video.pause();
+                _postMessage(EVENTS.PAUSE);
+                break;
+            case '#caption-on':
+                if (video.textTracks[0]) {
+                    video.textTracks[0].mode = 'showing';
+                }
+                break;
+            case '#caption-off':
+                if (video.textTracks[0]) {
+                    video.textTracks[0].mode = 'hidden';
+                }
+                break;
+            case '#controls':
+                if(!video.controls){
+                    video.controls = true;
+                    video.setAttribute('controlslist', 'nodownload');
+                } else {
+                    video.controls = false;
+                    video.setAttribute('controlslist', '');
+                }
+                break;
+            case '#mute':
+                video.muted = true;
+                _postMessage(EVENTS.MUTE, {media_mute: true});
+                break;
+            case '#unmute':
+                video.muted = false;
+                _postMessage(EVENTS.MUTE, {media_mute: false});
+                break;
+        }
+        if (hash && hash.indexOf('#volume_') === 0 && hash.length >= 9 && hash.length <= 11) {
+            var volumeValue = parseInt(hash.substring(8,11));
+            if (!isNaN(volumeValue) && volumeValue >= 0 && volumeValue <= 100) {
+                video.volume = volumeValue / 100;
+            }
+        }
+    };
+        
+    window.onhashchange = onHashChanged;
+
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</script>
+
+
+<script type="text/javascript" src="./KgYcOkQ"></script>
+
+</body></html>
