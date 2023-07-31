@@ -37,7 +37,7 @@ export default function SwiperCarousel() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Link href="/" legacyBehavior>
+          <Link href="/bookings/package1" legacyBehavior>
             <a className="text-[#0c3143]">
               <div className="relative">
                 <Image
@@ -62,7 +62,7 @@ export default function SwiperCarousel() {
         </SwiperSlide>
 
         <SwiperSlide>
-        <Link href="/" legacyBehavior>
+        <Link href="/bookings/package3" legacyBehavior>
         <a className="text-[#0c3143]">
               <div className="relative">
                 <Image
@@ -86,7 +86,7 @@ export default function SwiperCarousel() {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link href="/" legacyBehavior>
+        <Link href="/bookings/package2" legacyBehavior>
         <a className="text-[#0c3143]">
               <div className="relative">
                 <Image

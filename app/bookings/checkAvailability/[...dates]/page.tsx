@@ -1,17 +1,60 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useSelector,useDispatch } from "react-redux";
-import { singleRIncrement,singleRDecrement } from "@/app/features/counterSlice";
-import React, { useState,useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  singleRIncrement,
+  singleRDecrement,
+  cfamilyRDecrement,
+  ctripplerRDecrement,
+  cfamilyRIncrement,
+} from "@/app/features/counterSlice";
+import React, { useState, useEffect } from "react";
 import { RootState } from "@/app/store";
-const Availability = () => {
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useRouter } from "next/navigation";
+type Inputs = {
+  email: string;
+  firstName: string;
+  lastName: string;
+};
+interface pageProps{
+  params:any
+}
+
+const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
   const [state1, setState1] = useState<boolean>(false);
   const [state2, setState2] = useState<boolean>(false);
   const [state3, setState3] = useState<boolean>(true);
-  const singleCount=useSelector((state:RootState)=>state.counter.singleR);
-  const dispatch=useDispatch();
-  const maxValue=5
+  const router=useRouter()
+  const singleCount = useSelector((state: RootState) => state.counter.singleR);
+  const dateCount = useSelector((state: RootState) => state.counter.ctwin);
+  const dispatch = useDispatch();
+  const dispatch2 = useDispatch();
+  const [message,setMessage]=useState<string>("")
+  const {
+    register,
+    handleSubmit,
+    watch,
+  setValue,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const dates=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ const daysWeek=["Sun",'Mon',"Tue","Wed","Thr","Fri","Sat"]
+  const onSubmit: SubmitHandler<Inputs> = ({email,firstName,lastName}) =>{
+   
+    
+    setMessage("your details have been received successfully....")
+  };
+  const maxValue = 5;
+  
+  
+    const startDateCalc=new Date(searchParams.startDate).getTime();
+    const endDateCalc=new Date(searchParams.endDate).getTime();
+    const days=endDateCalc-startDateCalc;
+    var daysToStay=days/(1000*3600*24);
+  const total = dateCount * 165*Math.floor(daysToStay);
   return (
     <div className="wrapper2 mt-5 none">
       <div className="w-full md:flex gap-6">
@@ -22,11 +65,12 @@ const Availability = () => {
               <div>
                 <h1 className="opacity-70 text-[0.7rem]">CHECK IN</h1>
                 <div>
-                  <h1 className="text-xl">
-                    14 <span>SEP</span>
+                <h1 className="text-xl">
+                  {new Date(searchParams.startDate).getDate()} <span className="pl-2">{dates[new Date(searchParams.startDate).getMonth()]}</span>
                   </h1>
                   <h1>
-                    THU <span>2023</span>
+                    {daysWeek[new Date(searchParams.startDate).getDay()]} 
+                    <span className="pl-2">{new Date(searchParams.startDate).getFullYear()}</span>
                   </h1>
                 </div>
               </div>
@@ -35,16 +79,18 @@ const Availability = () => {
                 <h1 className="opacity-70 text-[0.7rem]">CHECK OUT</h1>
                 <div>
                   <h1 className="text-xl">
-                    14 <span>SEP</span>
+                  {new Date(searchParams.endDate).getDate()} 
+                  <span className="pl-2">{dates[new Date(searchParams.endDate).getMonth()]}</span>
                   </h1>
                   <h1>
-                    THU <span>2023</span>
+                    {daysWeek[new Date(searchParams.endDate).getDay()]} 
+                    <span className="pl-2">{new Date(searchParams.endDate).getFullYear()}</span>
                   </h1>
                 </div>
               </div>
               <div>
                 <h1 className="opacity-70 text-[0.7rem]">NIGHTS </h1>
-                <h1>1</h1>
+                <h1>{Math.floor(daysToStay)}</h1>
               </div>
             </div>
             <p className="opacity-90">
@@ -139,15 +185,21 @@ const Availability = () => {
                     <span className=" pl-2 opacity-60">total stay</span>
                   </h1>
                   <div className="flex">
-                    <button className="text-2xl border p-2" 
-                    onClick={()=>dispatch(singleRDecrement())}
-                    disabled={singleCount<1}
-                    >-</button>
+                    <button
+                      className="text-2xl border p-2"
+                      onClick={() => dispatch(singleRDecrement())}
+                      disabled={singleCount < 1}
+                    >
+                      -
+                    </button>
                     <h1 className="text-2xl border p-2">{singleCount}</h1>
-                    <button className="text-2xl border p-2" 
-                    onClick={()=>dispatch(singleRIncrement())}
-                    disabled={singleCount>4}
-                    >+</button>
+                    <button
+                      className="text-2xl border p-2"
+                      onClick={() => dispatch(singleRIncrement())}
+                      disabled={singleCount > 4}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               </div>
@@ -317,7 +369,6 @@ const Availability = () => {
           >
             {state1 ? `Hide Available Rooms` : `View Available Rooms`}
           </div>
-          
 
           <div className=" p-4 rounded-md mr-3 mt-4">
             <div className="flex ">
@@ -351,40 +402,110 @@ const Availability = () => {
             </div>
           </div>
           <div className="border ml-3" />
-          <div className="md:flex py-5 mr-3">
-            <h1 className="flex-1  text-xl font-semibold pl-3 ">Double Room</h1>
-            <div className="flex space-x-2 items-center">
-              <h1 className="">
-                $165<span>.00</span>
-                <span className=" pl-2 opacity-60">total stay</span>
-              </h1>
-              <div className="flex">
-                <button className="text-2xl border p-2">-</button>
-                <h1 className="text-2xl border p-2">0</h1>
-                <button className="text-2xl border p-2">+</button>
+          <h4 className="text-[13px] font-semibold text-[#111]">
+            Guest Details
+          </h4>
+          <div className=" py-5 mr-3">
+            
+             
+
+              <div className="border ml-3" />
+              <div className="md:flex py-5 mr-3">
+                <h1 className="flex-1  text-xl font-semibold pl-3 ">
+                  Twin Room
+                </h1>
+                <div className="flex space-x-2 items-center">
+                  <h1 className=" ">
+                    ${total}
+                    <span>.00</span>
+                    <span className=" pl-2 opacity-60">total stay</span>
+                  </h1>
+
+                  <div className="flex">
+                    <button
+                      className="text-2xl border p-2"
+                      onClick={() => dispatch2(cfamilyRDecrement())}
+                      disabled={dateCount < 1}
+                    >
+                      -
+                    </button>
+                    <h1 className="text-2xl border p-2">{dateCount}</h1>
+                    <button
+                      className="text-2xl border p-2"
+                      onClick={() => dispatch2(cfamilyRIncrement())}
+                      disabled={dateCount > 4}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="border ml-3" />
-          <div className="md:flex py-5 mr-3">
-            <h1 className="flex-1  text-xl font-semibold pl-3 ">Twin Room</h1>
-            <div className="flex space-x-2 items-center">
-              <h1 className=" ">
-                $165<span>.00</span>
-                <span className=" pl-2 opacity-60">total stay</span>
-              </h1>
-              <div className="flex">
-                <button className="text-2xl border p-2">-</button>
-                <h1 className="text-2xl border p-2">0</h1>
-                <button className="text-2xl border p-2">+</button>
+              <form onSubmit={handleSubmit(onSubmit)}>
+              <div>
+                <label htmlFor="emailValue" className="mb-[3px]">
+                  Email Address
+                  <span className="text-red-500 relative top-[5px]">*</span>
+                </label>
+                <br />
+                <input
+                  type="emailValue"
+                  id="email"
+                  {...register("email", { required: true })}
+                  className="w-full py-2 border active:border-none"
+                />
+                {errors.email && (
+                  <div className="text-red-600">this is a required field</div>
+                )}
               </div>
-            </div>
+              <div>
+                <label htmlFor="textValue" className="mb-[3px]">
+                  First Name
+                  <span className="text-red-500 relative top-[5px]">*</span>
+                </label>
+                <br />
+                <input
+                  type="text"
+                  id="textValue"
+                  {...register("firstName", { required: true })}
+                  className="w-full py-2 border active:border-none"
+                />
+                {errors.firstName && (
+                  <div className="text-red-600">this is a required field</div>
+                )}
+              </div>
+              <div>
+                <label htmlFor="lastValue" className="mb-[3px]">
+                  Last Name
+                  <span className="text-red-500 relative top-[5px]">*</span>
+                </label>
+                <br />
+                <input
+                  type="text"
+                  id="lastValue"
+                  {...register("lastName", { required: true })}
+                  className="w-full py-2 border active:border-none"
+                />
+                {errors.lastName && (
+                  <div className="text-red-600">this is a required field</div>
+                )}
+              </div>
+              <div className="mt-3">
+                <button
+                  type="submit"
+                  
+                  className="bg-[#af9355] hover:bg-[#777] rounded-md text-[15px] p-[15px]"
+                >
+                  Book Now
+                </button>
+              </div>
+              <p>{message}</p>
+            </form>
           </div>
-          <div className="border ml-3" />
         </div>
+        <div className="border ml-3" />
       </div>
     </div>
   );
 };
 
-export default  Availability;
+export default Availability;

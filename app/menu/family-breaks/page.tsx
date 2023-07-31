@@ -49,9 +49,7 @@ function FamilyBreak() {
           <h1 className="font-bold py-2 st">
             3 NIGHT FAMILY BREAKS FROM €375 MIDWEEK
           </h1>
-          <button className="my-5 py-4 border bg-blue-600 text-white font-semibold rounded-sm text-3xl px-5">
-            Book Now
-          </button>
+          
           <h2 className="mb-3 font-semibold st">
             Here are a few of the family friendly activities & days out that we
             recommend:

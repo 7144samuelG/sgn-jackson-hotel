@@ -103,11 +103,16 @@ export const hotelBooking=createSlice({
         ctripplerRDecrement:(state,action: PayloadAction<number>)=>{
             state.cdouble=action.payload
         },
-        cfamilyRIncrement:(state,action: PayloadAction<number>)=>{
-            state.ctwin=action.payload
+        cfamilyRIncrement:(state)=>{
+            if(state.ctwin>5){
+                state.ctwin=5
+            }
+            else{
+            state.ctwin+=1
+            }
         },
-        cfamilyRDecrement:(state,action: PayloadAction<number>)=>{
-            state.ctwin=action.payload
+        cfamilyRDecrement:(state)=>{
+            state.ctwin-=1
         }
     }
 })
@@ -116,5 +121,5 @@ export const {singleRIncrement,singleRDecrement,
     tripplerRIncrement,familyRDecrement,familyRIncrement,bsingleRDecrement,bsingleRIncrement,
 bdoubleRDecrement,bdoubleRIncrement,btwinRDecrement,btripplerRDecrement,btripplerRIncrement,
 btwinRIncrement,bfamilyRDecrement,
-bfamilyRIncrement,ctripplerRDecrement,cfamilyRDecrement,ctripplerRIncrement}=hotelBooking.actions;
+bfamilyRIncrement,ctripplerRDecrement,cfamilyRDecrement,cfamilyRIncrement,ctripplerRIncrement}=hotelBooking.actions;
 export default hotelBooking.reducer;  

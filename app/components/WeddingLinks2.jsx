@@ -39,7 +39,7 @@ const WeddingLinks2 = () => {
                 <h2  className="mobile text-red-500 font-semibold lt mb-[20px] text-[2rem]">
                 FINN SUITE
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/wed/finn-suite" legacyBehavior>
                   <a className="link-btn bt border border-white h-[38px] lha
                    text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
@@ -62,7 +62,7 @@ const WeddingLinks2 = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[1rem]">
                 DRUMBOE SUITE
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/wed/drumboe" legacyBehavior>
                   <a className=" link-btn bt border border-white h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>
@@ -82,7 +82,7 @@ const WeddingLinks2 = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[1rem]">
                 CEREMONY OPTIONS
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/wed/ceremony-options" legacyBehavior>
                   <a className="bt link-btn border border-white h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>
@@ -104,7 +104,7 @@ const WeddingLinks2 = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[1rem]">
                 PYRAMID SUITE 
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/wed/pyramid-suite" legacyBehavior>
                   <a className="bt border link-btn border-white h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>
@@ -124,7 +124,7 @@ const WeddingLinks2 = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[2rem]">
                 BRIDAL SUITE
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/we/bridal-suite" legacyBehavior>
                   <a className="bt border border-white link-btn h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>

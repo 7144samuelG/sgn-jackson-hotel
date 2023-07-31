@@ -33,19 +33,19 @@ function Conference() {
             </div>
             {open && (
               <div>
-                <Link href="/">
+                <Link href="/conference/facilities">
                   <div className="w-[300px] b pb-4 flex justify-between">
                     <h1 className="text-sm ">FACILITIES</h1>
                     <FaChevronRight size={10} />
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/conference/location">
                   <div className="w-[300px] b pb-4 pt-4 flex justify-between">
                     <h1 className="text-sm ">LOCATION</h1>
                     <FaChevronRight size={10} />
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/conference/donegal">
                   <div className="w-[300px] b pb-4 pt-4 flex justify-between">
                     <h1 className="text-sm ">WHY DONEGAL?</h1>
                     <FaChevronRight size={10} />
@@ -57,7 +57,7 @@ function Conference() {
                     <FaChevronRight size={10} />
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/conference/leisure">
                   <div className="w-[300px] b pb-4 pt-4 flex justify-between">
                     <h1 className="text-sm ">LEISURE TIME</h1>
                     <FaChevronRight size={10} />

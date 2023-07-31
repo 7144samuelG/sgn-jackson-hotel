@@ -59,10 +59,10 @@ export default function Home() {
           beginning of 2017. In that time the hotel has undergone an extensive
           refurbishment programme. The Gallen Hospitality Group
         </p>
-        {/* <div className="flex flex-col items-center mt-[20px] mb-[60px] opacity-70">
-          <FaChevronDown />
-          <p>READ MORE</p>
-        </div> */}
+        <div className="flex flex-col items-center mt-[20px] mb-[60px] opacity-70">
+           <FaChevronDown />{/*
+          <p>READ MORE</p> */}
+        </div>
       </div>
       <WeddingLinks1/>
       <div className="mt-5 w-[90%] md:w-[85%] lg:w-[80%] mx-auto">

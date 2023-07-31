@@ -32,19 +32,19 @@ function Leisure() {
             </div>
             {open && (
               <div>
-                <Link href="/">
+                <Link href="/leisure/swimming-pool">
                   <div className="w-[300px] b pb-4 flex justify-between">
                     <h1 className="text-sm ">SWIMMING POOL</h1>
                     <FaChevronRight size={10} />
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/leisure/our-gym">
                   <div className="w-[300px] b pb-4 pt-4 flex justify-between">
                     <h1 className="text-sm ">OUR GYM</h1>
                     <FaChevronRight size={10} />
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/leisure/membership">
                   <div className="w-[300px] b pb-4 pt-4 flex justify-between">
                     <h1 className="text-sm ">MEMBERSHIP</h1>
                     <FaChevronRight size={10} />

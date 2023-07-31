@@ -44,7 +44,7 @@ function Leisure() {
                     <FaChevronRight size={10} />
                   </div>
                 </Link>
-                <Link href="/family-friendly">
+                <Link href="/family-rooms">
                   <div className="w-[300px] b pb-4 pt-4 flex justify-between">
                     <h1 className="text-sm ">FAMILY ROOMS</h1>
                     <FaChevronRight size={10} />

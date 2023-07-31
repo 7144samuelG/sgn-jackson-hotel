@@ -2,32 +2,20 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
+type WindowDimensions={
+  width:number |undefined
+}
 const WeddingLinks1 = () => {
   const router=useRouter();
-  const [screenSize,setScreenSize]=useState<any>(getCurrentDimensions());
-  function getCurrentDimensions(){
-    return{
-      width:window.innerWidth,
-    }
-  }
-  useEffect(()=>{
-    const updateDimension=()=>{
-      setScreenSize(getCurrentDimensions)
-    }
-    window.addEventListener('resize',updateDimension);
-    return(()=>{
-      window.removeEventListener('resize',updateDimension);
-    })
-  },[screenSize])
+
   const goToPage=(name:string|undefined)=>{
-    if(screenSize.width<=768||screenSize.width<="768"){
+    if(window.innerWidth<=768){
       router.push(`/${name}`)
     }
   }
   return (
     <div className="md:flex  w-full justify-center ">
-      <div className="enq2 w-full md:w-1/2 h-full relative hf-wra" onClick={()=>goToPage("")}>
+      <div className="enq2 w-full md:w-1/2 h-full relative hf-wra cursor-pointer" onClick={()=>goToPage("bookings/grouped_specials")}>
       <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption cursor-pointer"
@@ -39,7 +27,7 @@ const WeddingLinks1 = () => {
                 <h2  className="mobile text-white font-semibold lt mb-[20px] text-[2rem]">
                   SPECIAL OFFERS
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/bookings/grouped_specials" legacyBehavior>
                   <a className="link-btn bt border border-white h-[38px] lha
                    text-white py-0 px-[25px] lin button-ghost">
                     SEE MORE
@@ -70,7 +58,7 @@ const WeddingLinks1 = () => {
               </div>
             </div>
           </div>
-          <div className="packages2 h-[200px] hf-wra ">
+          <div className="packages2 h-[200px] hf-wra  cursor-pointer" onClick={()=>goToPage("menu/wedding")} >
             <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"
@@ -92,7 +80,7 @@ const WeddingLinks1 = () => {
           </div>
         </div>
         <div className="md:flex gap-2">
-          <div className="brochure hf-wra">
+          <div className="brochure hf-wra cursor-ponter" onClick={()=>goToPage("dinning")}>
             <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"
@@ -112,7 +100,7 @@ const WeddingLinks1 = () => {
               </div>
             </div>
           </div>
-          <div className="gallery hf-wra">
+          <div className="gallery hf-wra cursor-ponter" onClick={()=>goToPage("gallen")}>
             <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"

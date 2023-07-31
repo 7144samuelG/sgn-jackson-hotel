@@ -62,7 +62,7 @@ const WeddingLinks = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[1rem]">
                    WEDDING VENUE
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/wedding/venue" legacyBehavior>
                   <a className=" link-btn bt border border-white h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>
@@ -82,7 +82,7 @@ const WeddingLinks = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[1rem]">
                     WEDDING PACKAGES
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/wed/packages" legacyBehavior>
                   <a className="bt link-btn border border-white h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>
@@ -104,7 +104,7 @@ const WeddingLinks = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[1rem]">
                    BROCHURE
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/wed/brochure" legacyBehavior>
                   <a className="bt border link-btn border-white h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>
@@ -124,7 +124,7 @@ const WeddingLinks = () => {
                 <h2 className=" text-red-500 font-semibold lt mb-[20px] text-[2rem]">
                   GALLERY
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/gallery" legacyBehavior>
                   <a className="bt border border-white link-btn h-[38px] lha text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE
                   </a>
