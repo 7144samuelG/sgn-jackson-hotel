@@ -5,23 +5,9 @@ import React, { useEffect, useState } from "react";
 
 const WeddingLinks = () => {
   const router=useRouter();
-  const [screenSize,setScreenSize]=useState<any>(getCurrentDimensions());
-  function getCurrentDimensions(){
-    return{
-      width:window.innerWidth,
-    }
-  }
-  useEffect(()=>{
-    const updateDimension=()=>{
-      setScreenSize(getCurrentDimensions)
-    }
-    window.addEventListener('resize',updateDimension);
-    return(()=>{
-      window.removeEventListener('resize',updateDimension);
-    })
-  },[screenSize])
+  
   const goToPage=()=>{
-    if(screenSize.width<=768||screenSize.width<="768"){
+    if(window.innerWidth<=768){
       router.push("/")
     }
   }
