@@ -109,7 +109,7 @@ const WeddingLinks1 = () => {
                 className="äbsolute left-0 right-0 bottom-0 w-[90%] my-0 mx-auto
            z-5 text-center chh element-content ab"
               >
-                <h2 className=" text-white font-semibold lt mb-[20px] text-[2rem]">
+                <h2 className=" text-white font-semibold lt mb-[20px] text-[1rem]">
                   GALLEN HOSPITALITY HOTELS
                 </h2>
                 <Link href="/gallen" legacyBehavior>
