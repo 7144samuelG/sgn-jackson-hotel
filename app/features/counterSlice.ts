@@ -15,8 +15,8 @@ export interface HotelState{
     ctwin:number
 }
 const initialState:HotelState={
-    singleR:1,
-    sdoubleR:1,
+    singleR:0,
+    sdoubleR:0,
     stwinR:0,
     stripleR:0,
     sfamily:0,
@@ -67,11 +67,17 @@ export const hotelBooking=createSlice({
         familyRDecrement:(state,action: PayloadAction<number>)=>{
             state.sfamily=action.payload
         },
-        bsingleRIncrement:(state,action: PayloadAction<number>)=>{
-            state.bsingleR=action.payload
+        bsingleRIncrement:(state)=>{
+            if(state.bsingleR>5){
+                state.bsingleR=5
+            }
+            else{
+            state.bsingleR+=1
+            }
+           
         },
-        bsingleRDecrement:(state,action: PayloadAction<number>)=>{
-            state.bsingleR=action.payload
+        bsingleRDecrement:(state)=>{
+            state.bsingleR-=1
         },
         bdoubleRIncrement:(state,action: PayloadAction<number>)=>{
             state.bdoubleR=action.payload

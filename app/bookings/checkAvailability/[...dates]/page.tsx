@@ -9,6 +9,8 @@ import {
   cfamilyRDecrement,
   ctripplerRDecrement,
   cfamilyRIncrement,
+  bsingleRIncrement,
+  bsingleRDecrement
 } from "@/app/features/counterSlice";
 import React, { useState, useEffect } from "react";
 import { RootState } from "@/app/store";
@@ -19,42 +21,62 @@ type Inputs = {
   firstName: string;
   lastName: string;
 };
-interface pageProps{
-  params:any
+interface pageProps {
+  params: any;
 }
 
-const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
+const Availability = ({
+  params,
+  searchParams,
+}: {
+  params: any;
+  searchParams: any;
+}) => {
   const [state1, setState1] = useState<boolean>(false);
   const [state2, setState2] = useState<boolean>(false);
   const [state3, setState3] = useState<boolean>(true);
-  const router=useRouter()
+  const router = useRouter();
   const singleCount = useSelector((state: RootState) => state.counter.singleR);
   const dateCount = useSelector((state: RootState) => state.counter.ctwin);
+  const bedBreakfast=useSelector((state:RootState)=>state.counter.bsingleR)
   const dispatch = useDispatch();
   const dispatch2 = useDispatch();
-  const [message,setMessage]=useState<string>("")
+  const dispatch3 = useDispatch();
+  const [message, setMessage] = useState<string>("");
   const {
     register,
     handleSubmit,
     watch,
-  setValue,
+    setValue,
     formState: { errors },
   } = useForm<Inputs>();
-  const dates=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
- const daysWeek=["Sun",'Mon',"Tue","Wed","Thr","Fri","Sat"]
-  const onSubmit: SubmitHandler<Inputs> = ({email,firstName,lastName}) =>{
-   
-    
-    setMessage("your details have been received successfully....")
+  const dates = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const daysWeek = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"];
+  const onSubmit: SubmitHandler<Inputs> = ({ email, firstName, lastName }) => {
+    setMessage("your details have been received successfully....");
   };
   const maxValue = 5;
-  
-  
-    const startDateCalc=new Date(searchParams.startDate).getTime();
-    const endDateCalc=new Date(searchParams.endDate).getTime();
-    const days=endDateCalc-startDateCalc;
-    var daysToStay=days/(1000*3600*24);
-  const total = dateCount * 165*Math.floor(daysToStay);
+
+  const startDateCalc = new Date(searchParams.startDate).getTime();
+  const endDateCalc = new Date(searchParams.endDate).getTime();
+  const days = endDateCalc - startDateCalc;
+  var daysToStay = days / (1000 * 3600 * 24);
+  const total = dateCount * 165 * Math.floor(daysToStay);
+  const total1=singleCount *84 * Math.floor(daysToStay);
+  const total2=bedBreakfast *105 * Math.floor(daysToStay);
   return (
     <div className="wrapper2 mt-5 none">
       <div className="w-full md:flex gap-6">
@@ -65,12 +87,17 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
               <div>
                 <h1 className="opacity-70 text-[0.7rem]">CHECK IN</h1>
                 <div>
-                <h1 className="text-xl">
-                  {new Date(searchParams.startDate).getDate()} <span className="pl-2">{dates[new Date(searchParams.startDate).getMonth()]}</span>
+                  <h1 className="text-xl">
+                    {new Date(searchParams.startDate).getDate()}{" "}
+                    <span className="pl-2">
+                      {dates[new Date(searchParams.startDate).getMonth()]}
+                    </span>
                   </h1>
                   <h1>
-                    {daysWeek[new Date(searchParams.startDate).getDay()]} 
-                    <span className="pl-2">{new Date(searchParams.startDate).getFullYear()}</span>
+                    {daysWeek[new Date(searchParams.startDate).getDay()]}
+                    <span className="pl-2">
+                      {new Date(searchParams.startDate).getFullYear()}
+                    </span>
                   </h1>
                 </div>
               </div>
@@ -79,12 +106,16 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
                 <h1 className="opacity-70 text-[0.7rem]">CHECK OUT</h1>
                 <div>
                   <h1 className="text-xl">
-                  {new Date(searchParams.endDate).getDate()} 
-                  <span className="pl-2">{dates[new Date(searchParams.endDate).getMonth()]}</span>
+                    {new Date(searchParams.endDate).getDate()}
+                    <span className="pl-2">
+                      {dates[new Date(searchParams.endDate).getMonth()]}
+                    </span>
                   </h1>
                   <h1>
-                    {daysWeek[new Date(searchParams.endDate).getDay()]} 
-                    <span className="pl-2">{new Date(searchParams.endDate).getFullYear()}</span>
+                    {daysWeek[new Date(searchParams.endDate).getDay()]}
+                    <span className="pl-2">
+                      {new Date(searchParams.endDate).getFullYear()}
+                    </span>
                   </h1>
                 </div>
               </div>
@@ -121,7 +152,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
                   alt=""
                 />
                 <div className="ml-2">
-                  <h1 className="font-bold text-2xl">Room Only</h1>
+                  <h1 className="font-bold text-[16px] md:text-2xl">Room Only</h1>
 
                   <Link href="/" legacyBehavior>
                     <a className="opacity-60">
@@ -132,7 +163,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
               </div>
               <div>
                 <p className="flex justify-end opacity-70">from</p>
-                <h1 className="font-bold text-2xl">
+                <h1 className="text-[14px] md:text-2xl">
                   $84<span>.00</span>
                 </h1>
                 <p className="flex justify-end opacity-70">total stay</p>
@@ -143,37 +174,6 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
 
           {state1 && (
             <div>
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">Single</h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className="">
-                    $114<span>.00</span>
-                    <span className=" pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Double Room
-                </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className="">
-                    $114<span>.00</span>
-                    <span className=" pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
               <div className="border ml-3" />
               <div className="md:flex py-5 mr-3">
                 <h1 className="flex-1  text-xl font-semibold pl-3 ">
@@ -181,7 +181,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
                 </h1>
                 <div className="flex space-x-2 items-center">
                   <h1 className=" ">
-                    $114<span>.00</span>
+                    ${total1}<span>.00</span>
                     <span className=" pl-2 opacity-60">total stay</span>
                   </h1>
                   <div className="flex">
@@ -204,39 +204,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
                 </div>
               </div>
               <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Tripple Room
-                </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className="">
-                    $114<span>.00</span>
-                    <span className=" pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Family Room
-                </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className="">
-                    $114<span>.00</span>
-                    <span className="pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
+
               <div className="border ml-3" />
             </div>
           )}
@@ -258,7 +226,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
                   alt=""
                 />
                 <div className="ml-2">
-                  <h1 className="font-bold text-2xl">Bed & Breakfast</h1>
+                  <h1 className="font-bold text-[16px] md:text-2xl">Bed & Breakfast</h1>
 
                   <Link href="/" legacyBehavior>
                     <a className="opacity-60">
@@ -269,7 +237,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
               </div>
               <div>
                 <p className="flex justify-end opacity-70">from</p>
-                <h1 className="font-bold text-2xl">
+                <h1 className="text-[14px] md:text-2xl">
                   $84<span>.00</span>
                 </h1>
                 <p className="flex justify-end opacity-70">total stay</p>
@@ -283,91 +251,31 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
                 <h1 className="flex-1  text-xl font-semibold pl-3 ">Single</h1>
                 <div className="flex space-x-2 items-center">
                   <h1 className="">
-                    $124<span>.00</span>
+                    ${total2}<span>.00</span>
                     <span className=" pl-2 opacity-60">total stay</span>
                   </h1>
                   <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
+                    <button className="text-2xl border p-2"
+                
+                     onClick={() => dispatch3(bsingleRDecrement())}
+                     disabled={bedBreakfast < 1}
+                    >-</button>
+                    <h1 className="text-2xl border p-2">{bedBreakfast}</h1>
+                    <button className="text-2xl border p-2"
+                    onClick={() => dispatch3(bsingleRIncrement())}
+                    disabled={bedBreakfast > 4}
+                    >+</button>
                   </div>
                 </div>
               </div>
               <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Double Room
-                </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className="">
-                    $129<span>.00</span>
-                    <span className=" pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Twin Room
-                </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className=" ">
-                    $129<span>.00</span>
-                    <span className=" pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Tripple Room
-                </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className="">
-                    $159<span>.00</span>
-                    <span className=" pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
-              <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Family Room
-                </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className="">
-                    $159<span>.00</span>
-                    <span className="pl-2 opacity-60">total stay</span>
-                  </h1>
-                  <div className="flex">
-                    <button className="text-2xl border p-2">-</button>
-                    <h1 className="text-2xl border p-2">0</h1>
-                    <button className="text-2xl border p-2">+</button>
-                  </div>
-                </div>
-              </div>
             </div>
           )}
           <div
             className="text-center cursor-pointer text-[rgb(12,49,67)]"
             onClick={() => setState2(!state2)}
           >
-            {state1 ? `Hide Available Rooms` : `View Available Rooms`}
+            {state2 ? `Hide Available Rooms` : `View Available Rooms`}
           </div>
 
           <div className=" p-4 rounded-md mr-3 mt-4">
@@ -381,7 +289,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
                   alt=""
                 />
                 <div className="ml-2">
-                  <h1 className="font-bold text-2xl">
+                  <h1 className="font-bold text-[16px] md:text-2xl">
                     Couples Date Night | Breakfast & Main Course
                   </h1>
 
@@ -394,7 +302,7 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
               </div>
               <div>
                 <p className="flex justify-end opacity-70">from</p>
-                <h1 className="font-bold text-2xl">
+                <h1 className="text-[14px] md:text-2xl">
                   $165<span>.00</span>
                 </h1>
                 <p className="flex justify-end opacity-70">total stay</p>
@@ -402,45 +310,55 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
             </div>
           </div>
           <div className="border ml-3" />
-          <h4 className="text-[13px] font-semibold text-[#111]">
-            Guest Details
-          </h4>
-          <div className=" py-5 mr-3">
-            
-             
 
-              <div className="border ml-3" />
-              <div className="md:flex py-5 mr-3">
-                <h1 className="flex-1  text-xl font-semibold pl-3 ">
-                  Twin Room
+          
+          
+          {state3 &&(
+            <div>
+            <div className="border ml-3" />
+            <div className="md:flex py-5 mr-3">
+              <h1 className="flex-1  text-xl font-semibold pl-3 ">Twin Room</h1>
+              <div className="flex space-x-2 items-center">
+                <h1 className=" ">
+                  ${total}
+                  <span>.00</span>
+                  <span className=" pl-2 opacity-60">total stay</span>
                 </h1>
-                <div className="flex space-x-2 items-center">
-                  <h1 className=" ">
-                    ${total}
-                    <span>.00</span>
-                    <span className=" pl-2 opacity-60">total stay</span>
-                  </h1>
 
-                  <div className="flex">
-                    <button
-                      className="text-2xl border p-2"
-                      onClick={() => dispatch2(cfamilyRDecrement())}
-                      disabled={dateCount < 1}
-                    >
-                      -
-                    </button>
-                    <h1 className="text-2xl border p-2">{dateCount}</h1>
-                    <button
-                      className="text-2xl border p-2"
-                      onClick={() => dispatch2(cfamilyRIncrement())}
-                      disabled={dateCount > 4}
-                    >
-                      +
-                    </button>
-                  </div>
+                <div className="flex">
+                  <button
+                    className="text-2xl border p-2"
+                    onClick={() => dispatch2(cfamilyRDecrement())}
+                    disabled={dateCount < 1}
+                  >
+                    -
+                  </button>
+                  <h1 className="text-2xl border p-2">{dateCount}</h1>
+                  <button
+                    className="text-2xl border p-2"
+                    onClick={() => dispatch2(cfamilyRIncrement())}
+                    disabled={dateCount > 4}
+                  >
+                    +
+                  </button>
                 </div>
               </div>
-              <form onSubmit={handleSubmit(onSubmit)}>
+            </div>
+            </div>
+)}
+            <div className=" py-5 mr-3">
+
+            <div
+              className="text-center cursor-pointer text-[rgb(12,49,67)]"
+              onClick={() => setState3(!state3)}
+            >
+              {state3 ? `Hide Available Rooms` : `View Available Rooms`}
+            </div>
+            <h4 className="text-[13px] font-semibold text-[#111]">
+            Guest Details
+          </h4>
+
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label htmlFor="emailValue" className="mb-[3px]">
                   Email Address
@@ -492,7 +410,6 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
               <div className="mt-3">
                 <button
                   type="submit"
-                  
                   className="bg-[#af9355] hover:bg-[#777] rounded-md text-[15px] p-[15px]"
                 >
                   Book Now
@@ -501,6 +418,9 @@ const Availability=({params,searchParams}:{params:any,searchParams:any}) => {
               <p>{message}</p>
             </form>
           </div>
+
+
+
         </div>
         <div className="border ml-3" />
       </div>

@@ -48,7 +48,7 @@ export const Header = () => {
       }
     >
       <div
-        className=" flex items-center w-[120px] md:w-[150px] 
+        className=" flex items-center w-[120px] md:w-[150px] cursor-pointer
          space-x-2 text-center justify-center border-red-500 bg-white" onClick={() => setActive(!active)}
       >
         <FaBars className="w-7 md:w-15 " />

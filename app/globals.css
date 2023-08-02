@@ -288,12 +288,17 @@ translate: -50% 0%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255,255,255,0.95);
-  margin-top: 850px !important;
+  margin-top: 800px !important;
   padding: 1.625rem;
   padding-top: 3rem;
   border-radius: 5px;
   z-index: 999999;
   height: 100vh;
+}
+@media (min-width:768px){
+  .header__menu{
+    margin-top: 850px !important;
+  }
 }
 .header__menu a {
   display: block;
