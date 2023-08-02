@@ -65,7 +65,6 @@ export const Header = () => {
         <a href="/menu/conference">CONFERENCING</a>
         <a href="/conference/donegal">EXPLORE DONEGAL</a>
         <a href="/menu/leisure">LEISURE</a>
-        <a href="/menu/wedding">WEDDINGS</a>
         <a href="/gallery">GALLERY</a>
       </div>
 
