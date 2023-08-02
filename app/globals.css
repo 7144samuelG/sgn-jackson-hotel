@@ -288,7 +288,7 @@ translate: -50% 0%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255,255,255,0.95);
-  margin-top: 800px !important;
+  margin-top: 1000px !important;
   padding: 1.625rem;
   padding-top: 3rem;
   border-radius: 5px;
@@ -297,9 +297,20 @@ translate: -50% 0%;
 }
 @media (min-width:768px){
   .header__menu{
+    margin-top: 1300px !important;
+  }
+}
+ @media (min-width:1000px){
+  .header__menu{
     margin-top: 850px !important;
   }
 }
+/*
+@media (min-width:900px){
+  .header__menu{
+    margin-top: 1400px !important;
+  }
+} */
 .header__menu a {
   display: block;
   padding: 0.625rem;
