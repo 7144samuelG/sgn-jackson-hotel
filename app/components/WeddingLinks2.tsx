@@ -6,14 +6,14 @@ import React, { useEffect, useState } from "react";
 const WeddingLinks2 = () => {
   const router=useRouter();
   
-  const goToPage=()=>{
+  const goToPage=(name:string|undefined)=>{
     if(window.innerWidth<=768){
-      router.push("/")
+      router.push(`/${name}`)
     }
   }
   return (
     <div className="md:flex  w-full justify-center ">
-      <div className="enq w-full md:w-1/2 h-full relative hf-wra" onClick={goToPage}>
+      <div className="enq w-full md:w-1/2 h-full relative hf-wra cursor-pointer" onClick={()=>goToPage("wed/finn-suite")}>
       <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"
@@ -36,7 +36,7 @@ const WeddingLinks2 = () => {
       </div>
       <div className="w-full md:w-1/2">
         <div className="md:flex gap-2 ">
-          <div className="venue h-[200px] relative hf-wra">
+          <div className="venue h-[200px] relative hf-wra cursor-pointer" onClick={()=>goToPage("wed/drumboe")}>
             <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"
@@ -56,7 +56,7 @@ const WeddingLinks2 = () => {
               </div>
             </div>
           </div>
-          <div className="packages h-[200px] hf-wra ">
+          <div className="packages h-[200px] hf-wra cursor-pointer" onClick={()=>goToPage("wed/ceremony-options")} >
             <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"
@@ -78,7 +78,7 @@ const WeddingLinks2 = () => {
           </div>
         </div>
         <div className="md:flex gap-2">
-          <div className="brochure hf-wra">
+          <div className="brochure hf-wra cursor-pointer" onClick={()=>goToPage("wed/pyramid-suite")}>
             <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"
@@ -98,7 +98,7 @@ const WeddingLinks2 = () => {
               </div>
             </div>
           </div>
-          <div className="gallery hf-wra">
+          <div className="gallery hf-wra cursor-pointer" onClick={()=>goToPage("wed/bridal-suite")}>
             <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"

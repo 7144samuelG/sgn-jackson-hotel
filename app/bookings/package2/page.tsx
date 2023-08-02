@@ -24,7 +24,8 @@ type Inputs = {
 };
 
 const Availability = () => {
-  const [value, onChange] = useState<Value>(new Date());
+  const [value, onChange] = useState<Value>( new Date());
+  const [value2, onChange2] = useState<Value>(new Date());
   const singleCount = useSelector((state: RootState) => state.counter.singleR);
   const dispatch = useDispatch();
   const maxValue = 5;
@@ -106,8 +107,8 @@ const Availability = () => {
               <DatePicker
                 minDate={new Date()}
                 closeCalendar={false}
-                onChange={onChange}
-                value={value}
+                onChange={onChange2}
+                value={value2}
               />
             </div>
           </div>
