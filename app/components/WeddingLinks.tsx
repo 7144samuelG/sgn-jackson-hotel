@@ -13,7 +13,7 @@ const WeddingLinks = () => {
   }
   return (
     <div className="md:flex  w-full justify-center ">
-      <div className="enq w-full md:w-1/2 h-full relative hf-wra cursor-pointer" onClick={()=>goToPage("")}>
+      <div className="enq w-full md:w-1/2 h-full relative hf-wra cursor-pointer" onClick={()=>goToPage("weddingEnquery")}>
       <div
               className="absolute bottom-0 left-0 right-0 p-[5px] text-[#0c3143] ch
          h-full w-full  text-center ab figacaption"
@@ -25,7 +25,7 @@ const WeddingLinks = () => {
                 <h2  className="mobile text-red-500 font-semibold lt mb-[20px] text-[2rem]">
                   WEDDING ENQUIRY
                 </h2>
-                <Link href="/" legacyBehavior>
+                <Link href="/weddingEnquery" legacyBehavior>
                   <a className="link-btn bt border border-white h-[38px] lha
                    text-red-400 py-0 px-[25px] lin button-ghost">
                     SEE MORE

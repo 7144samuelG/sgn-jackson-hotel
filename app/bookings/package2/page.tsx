@@ -26,6 +26,7 @@ type Inputs = {
 const Availability = () => {
   const [value, onChange] = useState<Value>( new Date());
   const [value2, onChange2] = useState<Value>(new Date());
+  const [message,setMessage]=useState<string>("")
   const singleCount = useSelector((state: RootState) => state.counter.singleR);
   const dispatch = useDispatch();
   const maxValue = 5;
@@ -33,9 +34,15 @@ const Availability = () => {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) =>{
+    setMessage("your details have been received successfully....");
+    setValue("email","");
+    setValue("firstName","")
+    setValue("lastName","")
+  };
   return (
     <div className="wrapper2 mt-5 none wz ">
       <div className="w-full md:flex gap-6">
@@ -175,6 +182,7 @@ const Availability = () => {
               </button>
             </div>
           </form>
+          <p className="text-center py-[30px]">{message}</p>
         </div>
       </div>
     </div>

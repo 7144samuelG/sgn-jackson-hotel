@@ -51,7 +51,7 @@ function Conference() {
                     <FaChevronRight size={10} />
                   </div>
                 </Link>
-                <Link href="/">
+                <Link href="/meeting-enquiry">
                   <div className="w-[300px] b pb-4 pt-4 flex justify-between">
                     <h1 className="text-sm ">MEETING ENQUIRY</h1>
                     <FaChevronRight size={10} />

@@ -6,10 +6,11 @@ import { useForm, SubmitHandler } from "react-hook-form"
 type Inputs = {
     email: string
     firstName: string
-    lastName:string
+    lastName:string,
+    enquiry:string
   }
 const Newsletter = () => {
-  const [message,setMessage]=useState<string>("")
+    const [message,setMessage]=useState<string>("")
     const {
         register,
         handleSubmit,
@@ -18,17 +19,18 @@ const Newsletter = () => {
         formState: { errors },
       } = useForm<Inputs>()
       const onSubmit: SubmitHandler<Inputs> = (data) =>{
-        setMessage("details have been submitted succesfully")
-        setValue("email","")
-        setValue("firstName","")
-        setValue("lastName","")
+        setMessage("your enquiry has been sent successfully");
+        setValue("email","");
+        setValue("firstName","");
+        setValue("lastName","");
+        setValue("enquiry","");
       }
   return (
     <div>
       
       <div className="z-0 h-[300px] border">
-        <Image
-          src="/images/story.jpg"
+      <Image
+          src="/images/conf.jpg"
           width={400}
           height={200}
           className="w-full h-[500px]"
@@ -36,9 +38,10 @@ const Newsletter = () => {
         />
       </div>
       <div className="mt-[200px] w-[95%] md:w-[80%] lg:w-[70%] mx-auto">
-        <h1 className="font-bold mb-[15px] text-[3rem]">NEWSLETTER SIGN-UP</h1>
-        <h3 className="font-bold my-[15px]">SUBSCRIBE TO OUR MAILING LIST</h3>
-        <form onSubmit={handleSubmit(onSubmit)} >
+        
+        <h1 className="text-2xl">Enquirey</h1>
+       
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="emailValue" className="mb-[3px]">Email Address<span 
                 className="text-red-500 relative top-[5px]">*</span></label><br/>
@@ -57,24 +60,23 @@ const Newsletter = () => {
                 </div>)}
             </div>
             <div>
-                <label htmlFor="lastValue" className="mb-[3px]">Last Name<span 
+                <label htmlFor="lastValue" className="mb-[3px]">Notes or requests<span 
                 className="text-red-500 relative top-[5px]">*</span></label><br/>
-                <input type="text" id="lastValue" {...register("lastName",{required:true})} className="w-full py-2 border active:border-none" />
-                {errors.lastName&&(<div className="text-red-600">
+                <textarea  id="lastValue" rows={6} {...register("enquiry",{required:true,maxLength:1000})} 
+                className="w-full py-2 border active:border-none" ></textarea>
+                {errors.enquiry&&(<div className="text-red-600">
                     this is a required field
                 </div>)}
             </div>
-            <h5 className="text-bold mb-4">Tick To Sign Up To Our Offers</h5>
-            <div>
-                <input type="checkbox" ></input><span className="opacity-70">I would like to receive offers</span>
-            </div>
+            
+            
             <div>
                 <button type="submit" className="bg-[#af9355] hover:bg-[#777] rounded-md text-[15px] p-[15px]">
-                    SUBSCRIBE
+                    SUBMIT
                 </button>
             </div>
+            <p className="py-[30px] text-center">{message}</p>
         </form>
-        <p className="text-center py-[20px]">{message}</p>
       </div>
     </div>
   );

@@ -67,6 +67,9 @@ const Availability = ({
   const daysWeek = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"];
   const onSubmit: SubmitHandler<Inputs> = ({ email, firstName, lastName }) => {
     setMessage("your details have been received successfully....");
+    setValue("email","");
+    setValue("firstName","")
+    setValue("lastName","")
   };
   const maxValue = 5;
 
@@ -358,7 +361,7 @@ const Availability = ({
             Guest Details
           </h4>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}  className="pr-2">
               <div>
                 <label htmlFor="emailValue" className="mb-[3px]">
                   Email Address
@@ -415,8 +418,9 @@ const Availability = ({
                   Book Now
                 </button>
               </div>
-              <p>{message}</p>
+              
             </form>
+            <p className="text-center py-[30px]">{message}</p>
           </div>
 
 
