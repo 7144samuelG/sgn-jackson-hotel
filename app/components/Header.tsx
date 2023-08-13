@@ -40,6 +40,7 @@ export const Header = () => {
     // })
   }
   return (
+    <div className="">
     <div
       className="wrapper px-4 pt-5 flex
      justify-between items-center right-0 left-0 top-[100px] z-10 "
@@ -57,7 +58,7 @@ export const Header = () => {
        </div>
        {
         active&&(
-       <div className="header__menu has-fade text-red-700 mb-[100px]">
+       <div className="header__menu has-fade text-red-700 mb-[100px]  absolute top-[90px] left-0 right-0">
         <a href="/">HOME</a>
         <a href="/menu/family-breaks">SUMMER FAMILY BREAKS</a>
         <a href="/menu/dinning">DINNING</a>
@@ -114,6 +115,7 @@ export const Header = () => {
 </div>
       
       
+    </div>
     </div>
   );
 };

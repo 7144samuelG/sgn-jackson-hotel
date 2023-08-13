@@ -22,7 +22,7 @@ export default function Home() {
   const [value, onChange] = useState<Value>(new Date());
   const [bookActive,setBookActive]=useState<boolean>(false)
   return (
-    <main className="mb-[50px]">
+    <main className="mb-[50px] relative">
       
       {/* <div className="absolute right-0 left-0  mt-[-100px] bg-white z-10 wrapper2">
 
